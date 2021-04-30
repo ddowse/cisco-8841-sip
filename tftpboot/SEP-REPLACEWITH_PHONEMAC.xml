@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<device>
+   <fullConfig>true</fullConfig>
+   <deviceProtocol>SIP</deviceProtocol>
+       <!--- XXX - Connect to your Phone with cisco@IPofPhone then debug:debug -->
+   <sshUserId>cisco</sshUserId>
+   <sshPassword>cisco</sshPassword>
+   <allowAutoConfig>true</allowAutoConfig>
+   <devicePool>
+      <dateTimeSetting>
+         <dateTemplate>D.M.Y</dateTemplate>
+	 <timeZone>Central Europe Standard/Daylight Time</timeZone>
+         <ntps>
+              <ntp>
+                  <!-- XXX - Network Time Provider -->
+                  <name>Add IP/Domain</name>
+                  <ntpMode>Unicast</ntpMode>
+              </ntp>
+         </ntps>
+      </dateTimeSetting>
+      <callManagerGroup>
+         <members>
+            <member priority="0">
+               <callManager>
+                  <ports>
+                     <ethernetPhonePort>2000</ethernetPhonePort>
+                     <sipPort>5060</sipPort>
+                     <securedSipPort>5061</securedSipPort>
+                  </ports>
+                    <!-- XXX - Add your SIP Providers Information (optional) -->
+                    <!-- EXAMPLE: <processNodeName>tel.t-online.de</processNodeName> -->
+                  <processNodeName></processNodeName>
+               </callManager>
+            </member>
+         </members>
+      </callManagerGroup>
+   </devicePool>
+   <sipProfile>
+      <sipProxies>
+         <backupProxy></backupProxy>
+         <backupProxyPort></backupProxyPort>
+         <emergencyProxy></emergencyProxy>
+         <emergencyProxyPort></emergencyProxyPort>
+        <!-- XXX - Add your SIP Providers Information (optional) -->
+        <!-- EXAMPLE: <outboundProxy>tel.t-online.de</outboundProxy> -->
+         <outboundProxy></outboundProxy>
+         <outboundProxyPort></outboundProxyPort>
+         <registerWithProxy>true</registerWithProxy>
+      </sipProxies>
+      <sipCallFeatures>
+         <cnfJoinEnabled>true</cnfJoinEnabled>
+         <callForwardURI>x-serviceuri-cfwdall</callForwardURI>
+         <callPickupURI>x-cisco-serviceuri-pickup</callPickupURI>
+         <callPickupListURI>x-cisco-serviceuri-opickup</callPickupListURI>
+         <callPickupGroupURI>x-cisco-serviceuri-gpickup</callPickupGroupURI>
+         <meetMeServiceURI>x-cisco-serviceuri-meetme</meetMeServiceURI>
+         <abbreviatedDialURI>x-cisco-serviceuri-abbrdial</abbreviatedDialURI>
+         <rfc2543Hold>false</rfc2543Hold>
+         <callHoldRingback>2</callHoldRingback>
+         <localCfwdEnable>true</localCfwdEnable>
+         <semiAttendedTransfer>true</semiAttendedTransfer>
+         <anonymousCallBlock>2</anonymousCallBlock>
+         <callerIdBlocking>2</callerIdBlocking>
+         <dndControl>0</dndControl>
+         <remoteCcEnable>true</remoteCcEnable>
+      </sipCallFeatures>
+      <sipStack>
+         <sipInviteRetx>6</sipInviteRetx>
+         <sipRetx>10</sipRetx>
+         <timerInviteExpires>180</timerInviteExpires>
+         <timerRegisterExpires>3600</timerRegisterExpires>
+         <timerRegisterDelta>5</timerRegisterDelta>
+         <timerKeepAliveExpires>120</timerKeepAliveExpires>
+         <timerSubscribeExpires>120</timerSubscribeExpires>
+         <timerSubscribeDelta>5</timerSubscribeDelta>
+         <timerT1>500</timerT1>
+         <timerT2>4000</timerT2>
+         <maxRedirects>70</maxRedirects>
+         <remotePartyID>true</remotePartyID>
+         <userInfo>None</userInfo>
+      </sipStack>
+      <autoAnswerTimer>1</autoAnswerTimer>
+      <autoAnswerAltBehavior>false</autoAnswerAltBehavior>
+      <autoAnswerOverride>true</autoAnswerOverride>
+      <transferOnhookEnabled>false</transferOnhookEnabled>
+      <enableVad>false</enableVad>
+      <preferredCodec>g711ulaw</preferredCodec>
+      <dtmfAvtPayload>101</dtmfAvtPayload>
+      <dtmfDbLevel>3</dtmfDbLevel>
+      <dtmfOutofBand>avt</dtmfOutofBand>
+      <alwaysUsePrimeLine>false</alwaysUsePrimeLine>
+      <alwaysUsePrimeLineVoiceMail>false</alwaysUsePrimeLineVoiceMail>
+      <kpml>3</kpml>
+      <natEnabled>false</natEnabled>
+      <natAddress></natAddress>
+      <phoneLabel>CISCO8841</phoneLabel>
+      <stutterMsgWaiting>0</stutterMsgWaiting>
+      <callStats>false</callStats>
+      <silentPeriodBetweenCallWaitingBursts>10</silentPeriodBetweenCallWaitingBursts>
+      <disableLocalSpeedDialConfig>false</disableLocalSpeedDialConfig>
+      <startMediaPort>16384</startMediaPort>
+      <stopMediaPort>32766</stopMediaPort>
+      <sipLines>
+         <line button="1">
+            <featureID>9</featureID>
+            <featureLabel>daemonbytes.net</featureLabel>
+                <!-- XXX - Add your SIP Providers Informaton below -->
+                <!-- EXAMPLE: <proxy>tel.t-online.de</proxy> -->
+	        <proxy></proxy>
+            <port></port>
+            <!-- XXX - Add your Phone number -->
+            <name>+491234567890</name>
+            <!-- XXX: Add your Name, left corner of display -->
+            <displayName>YOURNAME</displayName>
+            <autoAnswer>
+               <autoAnswerEnabled>2</autoAnswerEnabled>
+            </autoAnswer>
+            <callWaiting>3</callWaiting>
+	    <authName></authName>
+            <authPassword></authPassword>
+            <sharedLine>false</sharedLine>
+            <messageWaitingLampPolicy>1</messageWaitingLampPolicy>
+                <!-- XXX - Mailbox EXAMPLE: DTAG Sprachbox -->
+                <!-- <messagesNumber>08003302424</messagesNumber> -->
+            <messagesNumber>08003302424</messagesNumber>
+            <ringSettingIdle>4</ringSettingIdle>
+            <ringSettingActive>5</ringSettingActive>
+            <!-- XXX - Add your Phone number-->
+            <contact>+491234567890</contact>
+            <forwardCallInfoDisplay>
+               <callerName>true</callerName>
+               <callerNumber>true</callerNumber>
+               <redirectedNumber>false</redirectedNumber>
+               <dialedNumber>true</dialedNumber>
+            </forwardCallInfoDisplay>
+	     </line>   
+      </sipLines>
+      <voipControlPort>5060</voipControlPort>
+      <dscpForAudio>184</dscpForAudio>
+      <ringSettingBusyStationPolicy>0</ringSettingBusyStationPolicy>
+      <dialTemplate>dialplan.xml</dialTemplate>
+   </sipProfile>
+   <commonProfile>
+      <phonePassword></phonePassword>
+      <backgroundImageAccess>true</backgroundImageAccess>
+      <callLogBlfEnabled>1</callLogBlfEnabled>
+   </commonProfile>
+   <loadInformation>sip88xx.14-0-1-0101-145</loadInformation>
+   <vendorConfig>
+      <disableSpeaker>false</disableSpeaker>
+      <disableSpeakerAndHeadset>false</disableSpeakerAndHeadset>
+      <pcPort>0</pcPort>
+      <settingsAccess>1</settingsAccess>
+      <garp>0</garp>
+      <voiceVlanAccess>0</voiceVlanAccess>
+      <videoCapability>0</videoCapability>
+      <autoSelectLineEnable>0</autoSelectLineEnable>
+          <!-- enable 0 - disable 1 -->
+      <sshAccess>0</sshAccess>
+      <webAccess>0</webAccess>
+      <webAdmin>0</webAdmin>
+      <adminPassword>cisco</adminPassword>
+      <spanToPCPort>0</spanToPCPort>
+      <loggingDisplay>1</loggingDisplay>
+      <loadServer></loadServer>
+      <daysDisplayNotActive>1,2,3,4,5,6,7</daysDisplayNotActive>
+      <displayOnTime>00:00</displayOnTime>
+      <displayOnDuration>23:59</displayOnDuration>
+      <displayIdleTimeout>00:01</displayIdleTimeout>
+      <displayOnWhenIncomingCall>1</displayOnWhenIncomingCall>
+   </vendorConfig>
+   <versionStamp>1143565489-a3cbf294-7526-4c29-8791-c4fce4ce4c37</versionStamp>
+  <phoneServices useHTTPS="false">
+    <provisioning>2</provisioning>
+    <phoneService type="1" category="0">
+      <name>Missed Calls</name>
+      <url>Application:Cisco/MissedCalls</url>
+      <vendor></vendor>
+      <version></version>
+    </phoneService>
+    <phoneService type="1" category="0">
+      <name>Received Calls</name>
+      <url>Application:Cisco/ReceivedCalls</url>
+      <vendor></vendor>
+      <version></version>
+    </phoneService>
+    <phoneService type="1" category="0">
+      <name>Placed Calls</name>
+      <url>Application:Cisco/PlacedCalls</url>
+      <vendor></vendor>
+      <version></version>
+    </phoneService>
+    <phoneService type="2" category="0">
+      <name>Voicemail</name>
+      <url>Application:Cisco/Voicemail</url>
+      <vendor></vendor>
+      <version></version>
+    </phoneService>
+  </phoneServices>
+    <userLocale>
+        <name>German_Germany</name>
+        <uid>1</uid>
+        <langCode>de</langCode>
+        <version></version>
+        <winCharSet>UTF-8</winCharSet>
+    </userLocale>
+    <networkLocale>Germany</networkLocale>
+        <networkLocaleInfo>
+        <name>Germany</name>
+        <uid>64</uid>
+        <version></version>
+    </networkLocaleInfo>
+   <deviceSecurityMode>1</deviceSecurityMode>
+   <authenticationURL></authenticationURL>
+   <directoryURL></directoryURL>
+   <idleURL></idleURL>
+   <informationURL></informationURL>
+   <messagesURL></messagesURL>
+   <proxyServerURL></proxyServerURL>
+   <servicesURL></servicesURL>
+   <dscpForSCCPPhoneConfig>96</dscpForSCCPPhoneConfig>
+   <dscpForSCCPPhoneServices>0</dscpForSCCPPhoneServices>
+   <dscpForCm2Dvce>96</dscpForCm2Dvce>
+   <transportLayerProtocol>2</transportLayerProtocol>
+   <capfAuthMode>0</capfAuthMode>
+   <capfList>
+      <capf>
+         <phonePort>3804</phonePort>
+      </capf>
+   </capfList>
+   <certHash></certHash>
+   <encrConfig>false</encrConfig>
+</device>

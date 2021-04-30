@@ -1,0 +1,26 @@
+<Default>
+        <callManagerGroup>
+        <members>
+        <member priority="0">
+        <callManager>
+        <ports>
+        <ethernetPhonePort>2000</ethernetPhonePort>
+        <mgcpPorts>
+        <listen>2427</listen>
+        <keepAlive>2428</keepAlive>
+                 </mgcpPorts>
+              </ports>
+        <processNodeName></processNodeName>
+           </callManager>
+           </member>
+        </members>
+     </callManagerGroup>
+        <loadInformation model="Cisco 8841">sip88xx.14-0-1-0101-145</loadInformation>
+        <authenticationURL></authenticationURL>
+        <directoryURL></directoryURL>
+        <idleURL></idleURL>
+        <informationURL></informationURL>
+        <messagesURL></messagesURL>
+        <servicesURL></servicesURL>
+</Default>
+
